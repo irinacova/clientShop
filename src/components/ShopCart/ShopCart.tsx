@@ -1,6 +1,6 @@
 import { Button, Grid } from '@mui/material';
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 // interface IShopCartProps {
 //     createdAt: string;
 //     director: string;
@@ -12,6 +12,7 @@ import React from 'react';
 // }
 
 export const ShopCart = ({ onSubmitData, shopNumber, id }) => {
+    const navigate = useNavigate();
     async function onClickButtonDelete() {
         const response = await fetch(`http://localhost:3000/${id}`, {
             method: 'DELETE'
@@ -42,7 +43,9 @@ export const ShopCart = ({ onSubmitData, shopNumber, id }) => {
                 <Button
                     variant='text'
                     color='inherit'
-                    onClick={() => {}}
+                    onClick={() => {
+                      navigate(`/editShop/${id}`);
+                    }}
                     children='Изменить'
                 />
             </Grid>

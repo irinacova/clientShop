@@ -4,6 +4,7 @@ import './App.css';
 import PageInfoShop from '../PageInfoShop/PageInfoShop';
 import { Link, Route, Routes } from 'react-router-dom';
 import AllShops from '../AllShops/AllShops';
+import UpdateShop from '../Update/UpdateShop';
 
 function App() {
     const [name, setName] = useState([]);
@@ -26,7 +27,7 @@ function App() {
                         <Link to='/home'>Главная</Link>
                     </li>
                     <li>
-                        <Link to='/allShops'>Все магаазины</Link>
+                        <Link to='/allShops'>Все магазины</Link>
                     </li>
                 </ul>
             </nav>
@@ -36,6 +37,7 @@ function App() {
                     <Route path='shops/:id' element={<PageInfoShop />} />
                     <Route path='home' element={<Home />} />
                     <Route path='allShops' element={<AllShops />} />
+                    <Route path='editShop/:id' element={<UpdateShop />} />
                 </Route>
             </Routes>
         </>
