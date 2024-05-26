@@ -30,7 +30,17 @@ function UpdateShop() {
           setDirector(shop.director);
         }
     }, [shop]);
-    const onClickButtonUpdate = () => {};
+    const onClickButtonUpdate = async () => {
+       const shopsData = { shopNumber, street, houseNumber, director };
+        const response = await fetch(`http://localhost:3000/${params.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(shopsData)
+        });
+
+    };
     return (
         <>
             <h2>Для изменения информации о магазине заполните форму</h2>
