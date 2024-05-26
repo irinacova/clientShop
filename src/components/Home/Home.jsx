@@ -32,14 +32,16 @@ function Home() {
             body: JSON.stringify(shopsData)
         });
     }
-//  async function onClickButtonDelete() {
-    
-//     }
+
     return (
         <>
             <h1>Добро пожаловать на главную страницу</h1>
             <img src={SomeImg} alt='' />
-            <h2>Для поиска информации о магазине введите номер магазина</h2>
+            <h2>Для просмотра информации о всех магазинах нажмите кнопку Далее</h2>
+            <Button variant='contained' onClick={onClickButton}>
+                Далее
+            </Button>
+            <h2>Для поиска информации об одном магазине введите номер магазина</h2>
 
             <div>
                 <Input
@@ -87,10 +89,6 @@ function Home() {
             <Button variant='contained' onClick={onClickButtonCreate}>
                 Добавить
             </Button>
-            <h2>Для удаления данных о магазине введите номер магазина</h2>
-            {/* <Button variant='contained' onClick={}>
-             Удалить
-            </Button> */}
         </>
     );
 }
